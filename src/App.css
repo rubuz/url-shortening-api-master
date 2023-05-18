@@ -17,6 +17,8 @@
   --fw-regular: 400;
   --fw-bold: 500;
   --fw-bolder: 700;
+
+  --ff-regular: "Poppins", sans-serif;
 }
 
 /* CSS RESET */
@@ -49,6 +51,7 @@ body {
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  font-family: var(--ff-regular);
 }
 /*
   6. Improve media defaults
@@ -120,4 +123,18 @@ img {
   max-width: 968px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* BUTTONS */
+.btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-primary-400);
+  font-weight: var(--fw-bold);
+}
+
+.btn:hover {
+  opacity: 0.7;
+  transition: 0.2s;
 }
