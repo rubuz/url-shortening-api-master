@@ -1,0 +1,28 @@
+.home__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.home__title {
+  flex: 3;
+}
+
+.home__title h1 {
+  font-size: 4rem;
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+
+.home__title p {
+  font-weight: var(--fw-bold);
+  color: var(--clr-neutral-400);
+  width: 90%;
+  margin-bottom: 2rem;
+}
+
+.home__img {
+  flex: 2;
+  margin-right: -300px;
+}

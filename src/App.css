@@ -13,6 +13,7 @@
   --fs-regular: 1rem;
   --fs-big: 1.5rem;
   --fs-large: 2.5rem;
+  --fs-larger: 3.5rem;
 
   --fw-regular: 400;
   --fw-bold: 500;
@@ -115,7 +116,7 @@ img {
 }
 
 .section {
-  padding: 6rem 0 2rem;
+  padding: 4rem 0 2rem;
 }
 
 /* LAYOUTS */
