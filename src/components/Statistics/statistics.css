@@ -1,0 +1,10 @@
+.statistics__title-container {
+  margin: 3rem auto;
+  text-align: center;
+  width: 45%;
+}
+
+.statistics__title-container h2 {
+  font-size: var(--fs-large);
+  margin-bottom: 1rem;
+}
