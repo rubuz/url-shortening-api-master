@@ -5,6 +5,7 @@
   --clr-primary-500: hsl(257, 27%, 26%);
   --clr-secondary-400: hsl(0, 87%, 67%);
   --clr-neutral-100: #fff;
+  --clr-neutral-150: rgb(239, 241, 247);
   --clr-neutral-200: hsl(0, 0%, 75%);
   --clr-neutral-400: hsl(257, 7%, 63%);
   --clr-neutral-600: hsl(255, 11%, 22%);
@@ -12,6 +13,7 @@
 
   --fs-regular: 1rem;
   --fs-big: 1.5rem;
+  --fs-bigger: 2rem;
   --fs-large: 2.5rem;
   --fs-larger: 3.5rem;
 

@@ -1,10 +1,23 @@
+.full-bg {
+  background-color: var(--clr-neutral-150);
+}
+
 .statistics__title-container {
   margin: 3rem auto;
   text-align: center;
-  width: 45%;
+  width: 47%;
 }
 
 .statistics__title-container h2 {
-  font-size: var(--fs-large);
+  font-size: var(--fs-bigger);
   margin-bottom: 1rem;
+}
+
+.statistics__title-container p {
+  color: var(--clr-neutral-400);
+}
+
+.statistics__card-container {
+  display: flex;
+  gap: 1rem;
 }

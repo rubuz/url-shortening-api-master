@@ -1,0 +1,26 @@
+.statcard__container {
+  position: relative;
+  width: 275px;
+  background-color: var(--clr-neutral-100);
+  border-radius: 0.3rem;
+  padding: 3rem 1.5rem 1.5rem 1.5rem;
+}
+
+.statcard__img-box {
+  position: absolute;
+  top: -27px;
+  width: 55px;
+  background-color: var(--clr-primary-500);
+  border-radius: 50%;
+  padding: 14px;
+}
+
+.statcard__container h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.statcard__container p {
+  font-size: 0.75rem;
+  color: var(--clr-neutral-400);
+}
