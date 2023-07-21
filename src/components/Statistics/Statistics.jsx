@@ -16,7 +16,6 @@ const Statistics = () => {
             statistics dashboard.
           </p>
         </div>
-        <div className="statistics__card-container"></div>
         <div className="statistics__card-container">
           <StatCard
             icon={brand}
@@ -29,6 +28,7 @@ const Statistics = () => {
             text="Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions."
           />
           <StatCard
+            id="last-card"
             icon={fully}
             title="Fully Customizable"
             text="Improve brand awarness and content discoverability through customizable links, supercharging audience engagement."
