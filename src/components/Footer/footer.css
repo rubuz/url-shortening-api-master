@@ -50,16 +50,18 @@
 
 .icon__container {
   display: flex;
+  justify-content: center;
   max-height: min-content;
+  align-items: center;
   gap: 1.3rem;
+  margin-bottom: auto;
 }
 
-.icon__container img {
-  align-self: flex-start;
+.icon__container svg {
   cursor: pointer;
 }
 
-.icon__container img:hover {
-  filter: invert(91%) sepia(49%) saturate(5622%) hue-rotate(124deg)
-    brightness(83%) contrast(85%);
+.icon__container svg:hover {
+  filter: invert(0.16) sepia(1) saturate(15.1) hue-rotate(122.4deg)
+    brightness(1.2);
 }
