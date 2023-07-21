@@ -138,6 +138,6 @@ img {
 }
 
 .btn:hover {
-  opacity: 0.7;
+  background-color: hsl(180, 56%, 64%);
   transition: 0.2s;
 }

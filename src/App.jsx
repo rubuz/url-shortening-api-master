@@ -1,6 +1,5 @@
 import "./App.css";
 import Home from "./components/Home/Home";
-import Services from "./components/Services/Services";
 import Shortener from "./components/Shortener/Shortener";
 import Statistics from "./components/Statistics/Statistics";
 import Header from "./components/header/Header";
@@ -15,7 +14,6 @@ function App() {
         <Home />
         <Shortener />
         <Statistics />
-        <Services />
         <CTA />
       </main>
       <Footer />
