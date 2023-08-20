@@ -1,10 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./shortener.css";
 // https://api.shrtco.de/v2/shorten?url=
 
+const getLocalStorage = () => {
+  let links = localStorage.getItem("links");
+
+  if (links) {
+    return JSON.parse(localStorage.getItem("links"));
+  } else {
+    return [];
+  }
+};
+
 const Shortener = () => {
   const [url, setUrl] = useState("");
-  const [link, setLink] = useState([]);
+  const [links, setLinks] = useState(getLocalStorage());
+  const [copyBtnText, setCopyBtnText] = useState("Copy");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,13 +28,22 @@ const Shortener = () => {
         const res = await fetch(`https://api.shrtco.de/v2/shorten?url=${url}`);
         const data = await res.json();
         console.log(data);
-        setLink(data.result);
+        setLinks(data.result);
         setUrl("");
       };
 
       getShortLink();
     }
   };
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(links.full_short_link);
+    setCopyBtnText("Copied!");
+  };
+
+  useEffect(() => {
+    localStorage.setItem("links", JSON.stringify(links));
+  }, [links]);
 
   return (
     <div className="shortener__container container">
@@ -47,7 +67,21 @@ const Shortener = () => {
           Shorten it!
         </button>
       </form>
-      <div></div>
+      <div>
+        <div>
+          <p>{links.original_link}</p>
+        </div>
+        <div>
+          <ul>
+            <li>
+              <p>{links.full_short_link}</p>
+            </li>
+            <li>
+              <button onClick={handleCopy}>{copyBtnText}</button>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };
