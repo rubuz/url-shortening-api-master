@@ -17,6 +17,7 @@
 }
 
 .shortener__input-box {
+  position: relative;
   flex-grow: 4;
 }
 
@@ -48,8 +49,15 @@
   border-radius: 0.5rem;
 }
 
+.shortener__long-link {
+  width: calc(55%);
+  overflow: hidden;
+}
 .shortener__long-link p {
   font-weight: var(--fw-bold);
+  display: inline-block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .shortener__short-link-container ul {
@@ -70,4 +78,13 @@
 
 .shortener__short-link-btn.copied {
   background-color: var(--clr-neutral-600);
+}
+
+.no-link-error {
+  position: absolute;
+  color: var(--clr-secondary-400);
+  font-size: ;
+  display: block;
+  font-style: italic;
+  padding-top: 0.3rem;
 }

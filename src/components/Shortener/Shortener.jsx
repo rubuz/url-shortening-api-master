@@ -17,12 +17,13 @@ const Shortener = () => {
   const [links, setLinks] = useState([]);
   const [copyBtnText, setCopyBtnText] = useState("Copy");
   const [lastClickedIndex, setLastClickedIndex] = useState(null);
+  const [emptyLink, setEmptyLink] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!url) {
-      alert("Input is empty");
+      setEmptyLink(true);
     } else {
       try {
         const res = await fetch(`https://api.shrtco.de/v2/shorten?url=${url}`);
@@ -30,8 +31,10 @@ const Shortener = () => {
 
         setLinks((prevLinks) => [...prevLinks, data.result]);
         setUrl("");
+        setEmptyLink(false);
       } catch (error) {
         console.error("Error shortening link:", error);
+        alert("not a link");
       }
     }
   };
@@ -57,14 +60,11 @@ const Shortener = () => {
             value={url}
             onChange={(e) => setUrl(e.target.value)}
           />
-          {/* <span>Please add a link</span> */}
+          {emptyLink && (
+            <span className="no-link-error">Please add a link</span>
+          )}
         </div>
-
-        <button
-          type="submit"
-          className="shortener__btn btn"
-          onClick={handleSubmit}
-        >
+        <button type="submit" className="shortener__btn btn">
           Shorten it!
         </button>
       </form>
