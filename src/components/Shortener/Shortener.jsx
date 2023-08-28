@@ -14,31 +14,32 @@ const getLocalStorage = () => {
 
 const Shortener = () => {
   const [url, setUrl] = useState("");
-  const [links, setLinks] = useState(getLocalStorage());
+  const [links, setLinks] = useState([]);
   const [copyBtnText, setCopyBtnText] = useState("Copy");
+  const [lastClickedIndex, setLastClickedIndex] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!url) {
       alert("Input is empty");
     } else {
-      // Check if it a valid link
-      const getShortLink = async () => {
+      try {
         const res = await fetch(`https://api.shrtco.de/v2/shorten?url=${url}`);
         const data = await res.json();
-        console.log(data);
-        setLinks(data.result);
-        setUrl("");
-      };
 
-      getShortLink();
+        setLinks((prevLinks) => [...prevLinks, data.result]);
+        setUrl("");
+      } catch (error) {
+        console.error("Error shortening link:", error);
+      }
     }
   };
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(links.full_short_link);
-    setCopyBtnText("Copied!");
+  const handleCopy = (shortLink, index) => {
+    navigator.clipboard.writeText(shortLink);
+    setCopyBtnText(shortLink);
+    setLastClickedIndex(index);
   };
 
   useEffect(() => {
@@ -67,25 +68,31 @@ const Shortener = () => {
           Shorten it!
         </button>
       </form>
-      <div className="shortener__list-container">
-        <div className="shortener__long-link">
-          <p>{links.original_link}</p>
-        </div>
-        <div className="shortener__short-link-container">
-          <ul>
-            <li className="shortener__short-link">
-              <p>{links.full_short_link}</p>
-            </li>
-            <li>
-              <button
-                className="shortener__short-link-btn shortener__btn btn"
-                onClick={handleCopy}
-              >
-                {copyBtnText}
-              </button>
-            </li>
-          </ul>
-        </div>
+      <div>
+        {links.map((link, index) => (
+          <div className="shortener__list-container" key={index}>
+            <div className="shortener__long-link">
+              <p>{link.original_link}</p>
+            </div>
+            <div className="shortener__short-link-container">
+              <ul>
+                <li className="shortener__short-link">
+                  <p>{link.full_short_link}</p>
+                </li>
+                <li>
+                  <button
+                    className={`shortener__short-link-btn shortener__btn copy__btn btn ${
+                      index === lastClickedIndex ? "copied" : ""
+                    }`}
+                    onClick={() => handleCopy(link.full_short_link, index)}
+                  >
+                    {index === lastClickedIndex ? "Copied!" : "Copy"}
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
