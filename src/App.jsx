@@ -12,7 +12,6 @@ function App() {
       <Header />
       <main className="main">
         <Home />
-        <Shortener />
         <Statistics />
         <CTA />
       </main>

@@ -35,7 +35,8 @@
 
 .login-btn:hover {
   color: var(--clr-neutral-700);
-  transition: 0.2ms;
+  transition: 0.2s;
+  background: transparent;
 }
 
 .signup-btn:hover {

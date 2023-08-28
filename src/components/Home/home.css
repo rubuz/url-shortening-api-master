@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
+  margin-bottom: 5rem;
 }
 
 .home__title {

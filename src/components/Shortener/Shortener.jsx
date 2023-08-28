@@ -67,17 +67,22 @@ const Shortener = () => {
           Shorten it!
         </button>
       </form>
-      <div>
-        <div>
+      <div className="shortener__list-container">
+        <div className="shortener__long-link">
           <p>{links.original_link}</p>
         </div>
-        <div>
+        <div className="shortener__short-link-container">
           <ul>
-            <li>
+            <li className="shortener__short-link">
               <p>{links.full_short_link}</p>
             </li>
             <li>
-              <button onClick={handleCopy}>{copyBtnText}</button>
+              <button
+                className="shortener__short-link-btn shortener__btn btn"
+                onClick={handleCopy}
+              >
+                {copyBtnText}
+              </button>
             </li>
           </ul>
         </div>

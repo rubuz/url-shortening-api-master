@@ -4,11 +4,13 @@ import brand from "../../assets/icon-brand-recognition.svg";
 import records from "../../assets/icon-detailed-records.svg";
 import fully from "../../assets/icon-fully-customizable.svg";
 import StatCard from "./StatCard";
+import Shortener from "../Shortener/Shortener";
 
 const Statistics = () => {
   return (
     <div className="full-bg">
       <section className="section container">
+        <Shortener />
         <div className="statistics__title-container">
           <h2>Advanced Statistics</h2>
           <p>
