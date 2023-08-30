@@ -141,3 +141,9 @@ img {
   background-color: hsl(180, 56%, 64%);
   transition: 0.2s;
 }
+
+@media only screen and (max-width: 1000px) {
+  .section {
+    padding-inline: 1.1rem;
+  }
+}

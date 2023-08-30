@@ -28,3 +28,33 @@
   margin-right: -300px;
   min-width: 60%;
 }
+
+@media only screen and (max-width: 1000px) {
+  .home__container {
+    flex-direction: column-reverse;
+  }
+
+  .home__img {
+    min-width: none;
+    width: 140%;
+    margin-right: -150px;
+  }
+
+  .home__title {
+    text-align: center;
+  }
+
+  .home__title h1 {
+    font-size: 3rem;
+  }
+  .home__title p {
+    margin-top: 1rem;
+    width: 100%;
+    font-size: 1.1rem;
+  }
+
+  .btn {
+    font-size: 1.3rem;
+    padding-inline: 2.5rem;
+  }
+}

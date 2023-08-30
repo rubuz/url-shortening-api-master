@@ -40,7 +40,7 @@
 
 .shortener__list-container {
   width: 100%;
-  margin-top: 1rem;
+  margin-top: 0.8rem;
   background-color: var(--clr-neutral-100);
   display: flex;
   justify-content: space-between;
@@ -83,8 +83,27 @@
 .no-link-error {
   position: absolute;
   color: var(--clr-secondary-400);
-  font-size: ;
+  font-size: 0.8rem;
   display: block;
   font-style: italic;
   padding-top: 0.3rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  .shortener__input-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .shortener__input-box {
+    width: 100%;
+  }
+
+  .no-link-error {
+    position: relative;
+  }
+
+  .shortener__btn {
+    width: 100%;
+  }
 }
