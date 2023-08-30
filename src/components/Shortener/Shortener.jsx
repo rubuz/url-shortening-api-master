@@ -79,7 +79,7 @@ const Shortener = () => {
                 <li className="shortener__short-link">
                   <p>{link.full_short_link}</p>
                 </li>
-                <li>
+                <li className="media-copy-btn">
                   <button
                     className={`shortener__short-link-btn shortener__btn copy__btn btn ${
                       index === lastClickedIndex ? "copied" : ""
